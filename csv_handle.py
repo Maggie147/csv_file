@@ -27,6 +27,7 @@ class CsvHandle(object):
         csv_file = os.path.join(f_path, f_name)
         with open(csv_file, mode) as fp:
             rows = csv.reader(fp)
+            data_header = next(rows)  # 读取第一行每一列的标题
             data = [row for row in rows]
         return data
 
